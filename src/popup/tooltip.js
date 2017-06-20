@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var SMTooltipDirective = (function () {
+import { Directive, ViewContainerRef, Input } from "@angular/core";
+export var SMTooltipDirective = (function () {
     function SMTooltipDirective(element) {
         this.element = element;
     }
@@ -17,20 +16,19 @@ var SMTooltipDirective = (function () {
         this.element.element.nativeElement.setAttribute("data-position", this.smDirPosition || "top center");
         this.element.element.nativeElement.setAttribute("data-tooltip", this.smDirTooltip);
     };
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SMTooltipDirective.prototype, "smDirTooltip", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SMTooltipDirective.prototype, "smDirPosition", void 0);
+    SMTooltipDirective = __decorate([
+        Directive({
+            selector: "[smDirTooltip]"
+        }), 
+        __metadata('design:paramtypes', [ViewContainerRef])
+    ], SMTooltipDirective);
     return SMTooltipDirective;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SMTooltipDirective.prototype, "smDirTooltip", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SMTooltipDirective.prototype, "smDirPosition", void 0);
-SMTooltipDirective = __decorate([
-    core_1.Directive({
-        selector: "[smDirTooltip]"
-    }),
-    __metadata("design:paramtypes", [core_1.ViewContainerRef])
-], SMTooltipDirective);
-exports.SMTooltipDirective = SMTooltipDirective;

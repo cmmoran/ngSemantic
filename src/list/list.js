@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var SemanticListComponent = (function () {
+import { Component, Input, ChangeDetectionStrategy, ViewChild, ElementRef } from "@angular/core";
+export var SemanticListComponent = (function () {
     function SemanticListComponent() {
     }
     SemanticListComponent.prototype.ngAfterViewInit = function () {
@@ -17,22 +16,21 @@ var SemanticListComponent = (function () {
             .filter(function (element) { return element.nodeName === "SM-LIST"; })
             .map(function (element) { return element.firstElementChild.classList.remove("ui"); });
     };
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SemanticListComponent.prototype, "class", void 0);
+    __decorate([
+        ViewChild("innerElement"), 
+        __metadata('design:type', ElementRef)
+    ], SemanticListComponent.prototype, "innerElement", void 0);
+    SemanticListComponent = __decorate([
+        Component({
+            changeDetection: ChangeDetectionStrategy.OnPush,
+            selector: "sm-list",
+            template: "\n<div class=\"ui list {{class}}\" #innerElement>\n<ng-content></ng-content>\n</div>\n"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SemanticListComponent);
     return SemanticListComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticListComponent.prototype, "class", void 0);
-__decorate([
-    core_1.ViewChild("innerElement"),
-    __metadata("design:type", core_1.ElementRef)
-], SemanticListComponent.prototype, "innerElement", void 0);
-SemanticListComponent = __decorate([
-    core_1.Component({
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-        selector: "sm-list",
-        template: "\n<div class=\"ui list {{class}}\" #innerElement>\n<ng-content></ng-content>\n</div>\n"
-    }),
-    __metadata("design:paramtypes", [])
-], SemanticListComponent);
-exports.SemanticListComponent = SemanticListComponent;

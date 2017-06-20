@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var SemanticDimmerComponent = (function () {
+import { Component, ChangeDetectionStrategy, ViewChild, ElementRef } from "@angular/core";
+export var SemanticDimmerComponent = (function () {
     function SemanticDimmerComponent() {
     }
     SemanticDimmerComponent.prototype.show = function (options) {
@@ -17,18 +16,17 @@ var SemanticDimmerComponent = (function () {
             .dimmer(options || {})
             .dimmer("toggle");
     };
+    __decorate([
+        ViewChild("dimmer"), 
+        __metadata('design:type', ElementRef)
+    ], SemanticDimmerComponent.prototype, "dimmer", void 0);
+    SemanticDimmerComponent = __decorate([
+        Component({
+            changeDetection: ChangeDetectionStrategy.OnPush,
+            selector: "sm-dimmer",
+            template: "<div class=\"ui page dimmer\" #dimmer>\n  <div class=\"content\">\n    <ng-content></ng-content>\n  </div>\n</div>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SemanticDimmerComponent);
     return SemanticDimmerComponent;
 }());
-__decorate([
-    core_1.ViewChild("dimmer"),
-    __metadata("design:type", core_1.ElementRef)
-], SemanticDimmerComponent.prototype, "dimmer", void 0);
-SemanticDimmerComponent = __decorate([
-    core_1.Component({
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-        selector: "sm-dimmer",
-        template: "<div class=\"ui page dimmer\" #dimmer>\n  <div class=\"content\">\n    <ng-content></ng-content>\n  </div>\n</div>"
-    }),
-    __metadata("design:paramtypes", [])
-], SemanticDimmerComponent);
-exports.SemanticDimmerComponent = SemanticDimmerComponent;

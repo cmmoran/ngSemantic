@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+import { Component, Input, ChangeDetectionStrategy, ViewChild, ElementRef, Renderer } from "@angular/core";
 jQuery.fn.fixSidebar = function () {
     var allModules = jQuery(this);
     allModules
@@ -20,7 +19,7 @@ jQuery.fn.fixSidebar = function () {
     });
     return this;
 };
-var SemanticSidebarComponent = (function () {
+export var SemanticSidebarComponent = (function () {
     function SemanticSidebarComponent(renderer) {
         this.renderer = renderer;
     }
@@ -40,22 +39,21 @@ var SemanticSidebarComponent = (function () {
     SemanticSidebarComponent.prototype.ngOnDestroy = function () {
         this.renderer.detachView([this.sidebar.nativeElement]);
     };
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SemanticSidebarComponent.prototype, "class", void 0);
+    __decorate([
+        ViewChild("sidebar"), 
+        __metadata('design:type', ElementRef)
+    ], SemanticSidebarComponent.prototype, "sidebar", void 0);
+    SemanticSidebarComponent = __decorate([
+        Component({
+            changeDetection: ChangeDetectionStrategy.OnPush,
+            selector: "sm-sidebar",
+            template: "<div class=\"ui sidebar {{class}}\" #sidebar>\n<ng-content></ng-content>\n</div>"
+        }), 
+        __metadata('design:paramtypes', [Renderer])
+    ], SemanticSidebarComponent);
     return SemanticSidebarComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticSidebarComponent.prototype, "class", void 0);
-__decorate([
-    core_1.ViewChild("sidebar"),
-    __metadata("design:type", core_1.ElementRef)
-], SemanticSidebarComponent.prototype, "sidebar", void 0);
-SemanticSidebarComponent = __decorate([
-    core_1.Component({
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-        selector: "sm-sidebar",
-        template: "<div class=\"ui sidebar {{class}}\" #sidebar>\n<ng-content></ng-content>\n</div>"
-    }),
-    __metadata("design:paramtypes", [core_1.Renderer])
-], SemanticSidebarComponent);
-exports.SemanticSidebarComponent = SemanticSidebarComponent;

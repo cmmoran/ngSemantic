@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var SemanticPopupComponent = (function () {
+import { ElementRef, Component, ViewChild, Input, ChangeDetectionStrategy } from "@angular/core";
+export var SemanticPopupComponent = (function () {
     function SemanticPopupComponent() {
         this.visible = false;
     }
@@ -41,22 +40,21 @@ var SemanticPopupComponent = (function () {
                 .popup("hide");
         }
     };
+    __decorate([
+        ViewChild("popup"), 
+        __metadata('design:type', ElementRef)
+    ], SemanticPopupComponent.prototype, "popup", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SemanticPopupComponent.prototype, "class", void 0);
+    SemanticPopupComponent = __decorate([
+        Component({
+            changeDetection: ChangeDetectionStrategy.OnPush,
+            selector: "sm-popup",
+            template: "<div class=\"ui popup very wide {{class}}\" #popup>\n    <div class=\"content\">\n        <ng-content></ng-content>\n    </div>\n</div>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SemanticPopupComponent);
     return SemanticPopupComponent;
 }());
-__decorate([
-    core_1.ViewChild("popup"),
-    __metadata("design:type", core_1.ElementRef)
-], SemanticPopupComponent.prototype, "popup", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticPopupComponent.prototype, "class", void 0);
-SemanticPopupComponent = __decorate([
-    core_1.Component({
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-        selector: "sm-popup",
-        template: "<div class=\"ui popup very wide {{class}}\" #popup>\n    <div class=\"content\">\n        <ng-content></ng-content>\n    </div>\n</div>"
-    }),
-    __metadata("design:paramtypes", [])
-], SemanticPopupComponent);
-exports.SemanticPopupComponent = SemanticPopupComponent;

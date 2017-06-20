@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,37 +7,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var SemanticItemComponent = (function () {
+import { Component, Input, ChangeDetectionStrategy, ViewChild, ElementRef } from "@angular/core";
+export var SemanticItemComponent = (function () {
     function SemanticItemComponent() {
     }
     SemanticItemComponent.prototype.ngAfterViewInit = function () {
         this.innerItemElement.nativeElement.parentElement.classList.add("item");
     };
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SemanticItemComponent.prototype, "icon", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SemanticItemComponent.prototype, "header", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SemanticItemComponent.prototype, "image", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SemanticItemComponent.prototype, "value", void 0);
+    __decorate([
+        ViewChild("innerItemElement"), 
+        __metadata('design:type', ElementRef)
+    ], SemanticItemComponent.prototype, "innerItemElement", void 0);
+    SemanticItemComponent = __decorate([
+        Component({
+            changeDetection: ChangeDetectionStrategy.OnPush,
+            selector: "a[sm-item], sm-item",
+            host: { "[attr.data-value]": "value" },
+            template: "<i *ngIf=\"icon\" class=\"{{icon}} icon\"></i>\n<img *ngIf=\"image\" class=\"ui avatar image\" src=\"{{image}}\">\n<div class=\"content\" #innerItemElement>\n  <div *ngIf=\"header\" class=\"header\">\n    {{header}}\n  </div>\n  <ng-content></ng-content>\n</div>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SemanticItemComponent);
     return SemanticItemComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticItemComponent.prototype, "icon", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticItemComponent.prototype, "header", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticItemComponent.prototype, "image", void 0);
-__decorate([
-    core_1.ViewChild("innerItemElement"),
-    __metadata("design:type", core_1.ElementRef)
-], SemanticItemComponent.prototype, "innerItemElement", void 0);
-SemanticItemComponent = __decorate([
-    core_1.Component({
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-        selector: "a[sm-item], sm-item",
-        template: "<i *ngIf=\"icon\" class=\"{{icon}} icon\"></i>\n<img *ngIf=\"image\" class=\"ui avatar image\" src=\"{{image}}\">\n<div class=\"content\" #innerItemElement>\n  <div *ngIf=\"header\" class=\"header\">\n    {{header}}\n  </div>\n  <ng-content></ng-content>\n</div>"
-    }),
-    __metadata("design:paramtypes", [])
-], SemanticItemComponent);
-exports.SemanticItemComponent = SemanticItemComponent;

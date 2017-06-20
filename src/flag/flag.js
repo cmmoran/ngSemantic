@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,22 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var SemanticFlagComponent = (function () {
+import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
+export var SemanticFlagComponent = (function () {
     function SemanticFlagComponent() {
     }
+    __decorate([
+        Input("flag"), 
+        __metadata('design:type', String)
+    ], SemanticFlagComponent.prototype, "flag", void 0);
+    SemanticFlagComponent = __decorate([
+        Component({
+            changeDetection: ChangeDetectionStrategy.OnPush,
+            selector: "sm-flag",
+            template: "<i class=\"{{flag}} flag\"></i>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SemanticFlagComponent);
     return SemanticFlagComponent;
 }());
-__decorate([
-    core_1.Input("flag"),
-    __metadata("design:type", String)
-], SemanticFlagComponent.prototype, "flag", void 0);
-SemanticFlagComponent = __decorate([
-    core_1.Component({
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-        selector: "sm-flag",
-        template: "<i class=\"{{flag}} flag\"></i>"
-    }),
-    __metadata("design:paramtypes", [])
-], SemanticFlagComponent);
-exports.SemanticFlagComponent = SemanticFlagComponent;

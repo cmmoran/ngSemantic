@@ -52,7 +52,7 @@ export class SemanticDropdownComponent implements AfterViewInit {
     const options: {} = Object.assign({
       onChange: (value: string|number, a: string|number, b: Array<HTMLElement>) => {
         if (b != null && b.length) {
-          this.value = parseInt(b[0].dataset.value);
+          this.value = parseInt(b[0].dataset['value']);
           this.control.setValue(this.value);
           this.input.nativeElement.value = this.value;
           this.valueChange.emit(this.value);

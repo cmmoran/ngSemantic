@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,22 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var SemanticSegmentComponent = (function () {
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
+export var SemanticSegmentComponent = (function () {
     function SemanticSegmentComponent() {
     }
+    __decorate([
+        Input("class"), 
+        __metadata('design:type', String)
+    ], SemanticSegmentComponent.prototype, "class", void 0);
+    SemanticSegmentComponent = __decorate([
+        Component({
+            changeDetection: ChangeDetectionStrategy.OnPush,
+            selector: "sm-segment",
+            template: "<div class=\"ui segment {{class}}\">\n  <p><ng-content></ng-content></p>\n</div>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SemanticSegmentComponent);
     return SemanticSegmentComponent;
 }());
-__decorate([
-    core_1.Input("class"),
-    __metadata("design:type", String)
-], SemanticSegmentComponent.prototype, "class", void 0);
-SemanticSegmentComponent = __decorate([
-    core_1.Component({
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-        selector: "sm-segment",
-        template: "<div class=\"ui segment {{class}}\">\n  <p><ng-content></ng-content></p>\n</div>"
-    }),
-    __metadata("design:paramtypes", [])
-], SemanticSegmentComponent);
-exports.SemanticSegmentComponent = SemanticSegmentComponent;

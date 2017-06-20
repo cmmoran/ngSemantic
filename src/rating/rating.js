@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,10 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var SemanticRatingComponent = (function () {
+import { Component, Input, ViewChild, ChangeDetectionStrategy, ElementRef, EventEmitter, Output } from "@angular/core";
+export var SemanticRatingComponent = (function () {
     function SemanticRatingComponent() {
-        this.onRate = new core_1.EventEmitter();
+        this.onRate = new EventEmitter();
     }
     SemanticRatingComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
@@ -24,34 +23,33 @@ var SemanticRatingComponent = (function () {
             }
         });
     };
+    __decorate([
+        Input(), 
+        __metadata('design:type', String)
+    ], SemanticRatingComponent.prototype, "class", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', Number)
+    ], SemanticRatingComponent.prototype, "initialRating", void 0);
+    __decorate([
+        Input(), 
+        __metadata('design:type', Number)
+    ], SemanticRatingComponent.prototype, "maxRating", void 0);
+    __decorate([
+        Output(), 
+        __metadata('design:type', EventEmitter)
+    ], SemanticRatingComponent.prototype, "onRate", void 0);
+    __decorate([
+        ViewChild("rating"), 
+        __metadata('design:type', ElementRef)
+    ], SemanticRatingComponent.prototype, "rating", void 0);
+    SemanticRatingComponent = __decorate([
+        Component({
+            changeDetection: ChangeDetectionStrategy.OnPush,
+            selector: "sm-rating",
+            template: "<div class=\"ui {{class}} rating\" #rating></div>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SemanticRatingComponent);
     return SemanticRatingComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SemanticRatingComponent.prototype, "class", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], SemanticRatingComponent.prototype, "initialRating", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], SemanticRatingComponent.prototype, "maxRating", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], SemanticRatingComponent.prototype, "onRate", void 0);
-__decorate([
-    core_1.ViewChild("rating"),
-    __metadata("design:type", core_1.ElementRef)
-], SemanticRatingComponent.prototype, "rating", void 0);
-SemanticRatingComponent = __decorate([
-    core_1.Component({
-        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-        selector: "sm-rating",
-        template: "<div class=\"ui {{class}} rating\" #rating></div>"
-    }),
-    __metadata("design:paramtypes", [])
-], SemanticRatingComponent);
-exports.SemanticRatingComponent = SemanticRatingComponent;
