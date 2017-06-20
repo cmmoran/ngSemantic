@@ -24,7 +24,7 @@ export * from "./src/dimmer/dimmer";
 export * from "./src/transition/transition";
 export * from "./src/shape/shape";
 export * from "./src/accordion/accordion";
-export declare let SEMANTIC_COMPONENTS: Array<any>;
-export declare let SEMANTIC_DIRECTIVES: Array<any>;
+import { ModuleWithProviders } from "@angular/core";
 export declare class NgSemanticModule {
+    static forRoot(): ModuleWithProviders;
 }
