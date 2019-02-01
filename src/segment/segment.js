@@ -7,21 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
-export var SemanticSegmentComponent = (function () {
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+var SemanticSegmentComponent = (function () {
     function SemanticSegmentComponent() {
     }
     __decorate([
-        Input("class"), 
-        __metadata('design:type', String)
+        Input('class'),
+        __metadata("design:type", String)
     ], SemanticSegmentComponent.prototype, "class", void 0);
     SemanticSegmentComponent = __decorate([
         Component({
             changeDetection: ChangeDetectionStrategy.OnPush,
-            selector: "sm-segment",
+            selector: 'sm-segment',
             template: "<div class=\"ui segment {{class}}\">\n  <p><ng-content></ng-content></p>\n</div>"
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], SemanticSegmentComponent);
     return SemanticSegmentComponent;
 }());
+export { SemanticSegmentComponent };

@@ -14,7 +14,7 @@ declare var jQuery: any;
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: "sm-dropdown",
+  selector: 'sm-dropdown',
   template: `
     <div
       class="ui {{class}} dropdown"
@@ -36,7 +36,7 @@ export class SemanticDropdownComponent implements AfterViewInit {
   @Input() class: string;
   @Input() title: string;
   @Input() icon: string;
-  @Input() arrowIcon: string = "dropdown";
+  @Input() arrowIcon: string = 'dropdown';
   @Input() name: string;
   @Input() items: Array<{}>;
   @Input() options: {} = {};
@@ -45,14 +45,14 @@ export class SemanticDropdownComponent implements AfterViewInit {
   @Output() onChange: EventEmitter<string|number> = new EventEmitter<string|number>();
   @Output() onFocus: EventEmitter<FocusEvent> = new EventEmitter<FocusEvent>();
   @Output() onBlur: EventEmitter<FocusEvent> = new EventEmitter<FocusEvent>();
-  @ViewChild("dropdown") dropdown: ElementRef;
-  @ViewChild("input") input: ElementRef;
+  @ViewChild('dropdown') dropdown: ElementRef;
+  @ViewChild('input') input: ElementRef;
 
   ngAfterViewInit(): void {
     const options: {} = Object.assign({
       onChange: (value: string|number, a: string|number, b: Array<HTMLElement>) => {
         if (b != null && b.length) {
-          this.value = parseInt(b[0].dataset['value']);
+          this.value = parseInt(b[0].dataset['value'], 10);
           this.control.setValue(this.value);
           this.input.nativeElement.value = this.value;
           this.valueChange.emit(this.value);

@@ -7,30 +7,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, Input, ChangeDetectionStrategy, ViewChild, ElementRef } from "@angular/core";
-export var SemanticListComponent = (function () {
+import { Component, Input, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
+var SemanticListComponent = (function () {
     function SemanticListComponent() {
     }
     SemanticListComponent.prototype.ngAfterViewInit = function () {
         Array.from(this.innerElement.nativeElement.childNodes)
-            .filter(function (element) { return element.nodeName === "SM-LIST"; })
-            .map(function (element) { return element.firstElementChild.classList.remove("ui"); });
+            .filter(function (element) { return element.nodeName === 'SM-LIST'; })
+            .map(function (element) { return element.firstElementChild.classList.remove('ui'); });
     };
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        Input(),
+        __metadata("design:type", String)
     ], SemanticListComponent.prototype, "class", void 0);
     __decorate([
-        ViewChild("innerElement"), 
-        __metadata('design:type', ElementRef)
+        ViewChild('innerElement'),
+        __metadata("design:type", ElementRef)
     ], SemanticListComponent.prototype, "innerElement", void 0);
     SemanticListComponent = __decorate([
         Component({
             changeDetection: ChangeDetectionStrategy.OnPush,
-            selector: "sm-list",
+            selector: 'sm-list',
             template: "\n<div class=\"ui list {{class}}\" #innerElement>\n<ng-content></ng-content>\n</div>\n"
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], SemanticListComponent);
     return SemanticListComponent;
 }());
+export { SemanticListComponent };

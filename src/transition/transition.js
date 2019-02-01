@@ -7,25 +7,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, ChangeDetectionStrategy, ViewChild, ElementRef } from "@angular/core";
-export var SemanticTransitionComponent = (function () {
+import { Component, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
+var SemanticTransitionComponent = (function () {
     function SemanticTransitionComponent() {
     }
     SemanticTransitionComponent.prototype.show = function (animation) {
         jQuery(this.transition.nativeElement)
-            .transition(animation || "fade out");
+            .transition(animation || 'fade out');
     };
     __decorate([
-        ViewChild("transition"), 
-        __metadata('design:type', ElementRef)
+        ViewChild('transition'),
+        __metadata("design:type", ElementRef)
     ], SemanticTransitionComponent.prototype, "transition", void 0);
     SemanticTransitionComponent = __decorate([
         Component({
             changeDetection: ChangeDetectionStrategy.OnPush,
-            selector: "sm-transition",
+            selector: 'sm-transition',
             template: "\n    <div #transition>\n        <ng-content></ng-content>\n    </div>\n    "
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], SemanticTransitionComponent);
     return SemanticTransitionComponent;
 }());
+export { SemanticTransitionComponent };

@@ -7,41 +7,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, Input, ChangeDetectionStrategy, ViewChild, ElementRef } from "@angular/core";
-export var SemanticItemComponent = (function () {
+import { Component, Input, ChangeDetectionStrategy, ViewChild, ElementRef, HostBinding } from '@angular/core';
+var SemanticItemComponent = (function () {
     function SemanticItemComponent() {
     }
     SemanticItemComponent.prototype.ngAfterViewInit = function () {
-        this.innerItemElement.nativeElement.parentElement.classList.add("item");
+        this.innerItemElement.nativeElement.parentElement.classList.add('item');
     };
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        Input(),
+        __metadata("design:type", String)
     ], SemanticItemComponent.prototype, "icon", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        Input(),
+        __metadata("design:type", String)
     ], SemanticItemComponent.prototype, "header", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        Input(),
+        __metadata("design:type", String)
     ], SemanticItemComponent.prototype, "image", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        HostBinding('attr.data-value'),
+        __metadata("design:type", String)
     ], SemanticItemComponent.prototype, "value", void 0);
     __decorate([
-        ViewChild("innerItemElement"), 
-        __metadata('design:type', ElementRef)
+        ViewChild('innerItemElement'),
+        __metadata("design:type", ElementRef)
     ], SemanticItemComponent.prototype, "innerItemElement", void 0);
     SemanticItemComponent = __decorate([
         Component({
             changeDetection: ChangeDetectionStrategy.OnPush,
-            selector: "a[sm-item], sm-item",
-            host: { "[attr.data-value]": "value" },
+            selector: 'a[sm-item], sm-item',
             template: "<i *ngIf=\"icon\" class=\"{{icon}} icon\"></i>\n<img *ngIf=\"image\" class=\"ui avatar image\" src=\"{{image}}\">\n<div class=\"content\" #innerItemElement>\n  <div *ngIf=\"header\" class=\"header\">\n    {{header}}\n  </div>\n  <ng-content></ng-content>\n</div>"
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], SemanticItemComponent);
     return SemanticItemComponent;
 }());
+export { SemanticItemComponent };

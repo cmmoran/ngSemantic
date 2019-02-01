@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { ElementRef, Component, ViewChild, Input, ChangeDetectionStrategy } from "@angular/core";
-export var SemanticPopupComponent = (function () {
+import { ElementRef, Component, ViewChild, Input, ChangeDetectionStrategy } from '@angular/core';
+var SemanticPopupComponent = (function () {
     function SemanticPopupComponent() {
         this.visible = false;
     }
@@ -22,39 +22,39 @@ export var SemanticPopupComponent = (function () {
                 closable: true,
                 exclusive: true,
                 lastResort: true,
-                on: "click",
+                on: 'click',
                 onHide: function () { return _this.hide(); },
                 popup: this.popup.nativeElement,
-                position: "bottom center",
+                position: 'bottom center',
                 preserve: true,
             }, data);
             jQuery(this.element)
                 .popup(options)
-                .popup("show");
+                .popup('show');
         }
     };
     SemanticPopupComponent.prototype.hide = function () {
         if (this.visible && this.element) {
             this.visible = false;
             jQuery(this.element)
-                .popup("hide");
+                .popup('hide');
         }
     };
     __decorate([
-        ViewChild("popup"), 
-        __metadata('design:type', ElementRef)
+        ViewChild('popup'),
+        __metadata("design:type", ElementRef)
     ], SemanticPopupComponent.prototype, "popup", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        Input(),
+        __metadata("design:type", String)
     ], SemanticPopupComponent.prototype, "class", void 0);
     SemanticPopupComponent = __decorate([
         Component({
             changeDetection: ChangeDetectionStrategy.OnPush,
-            selector: "sm-popup",
+            selector: 'sm-popup',
             template: "<div class=\"ui popup very wide {{class}}\" #popup>\n    <div class=\"content\">\n        <ng-content></ng-content>\n    </div>\n</div>"
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], SemanticPopupComponent);
     return SemanticPopupComponent;
 }());
+export { SemanticPopupComponent };

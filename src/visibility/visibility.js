@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Directive, ViewContainerRef, Input, Output, EventEmitter } from "@angular/core";
-export var SMVisibilityDirective = (function () {
+import { Directive, ViewContainerRef, Input, Output, EventEmitter } from '@angular/core';
+var SMVisibilityDirective = (function () {
     function SMVisibilityDirective(element) {
         this.element = element;
         this.onTopVisible = new EventEmitter();
@@ -27,46 +27,48 @@ export var SMVisibilityDirective = (function () {
         }
     };
     __decorate([
-        Input(), 
-        __metadata('design:type', Object)
+        Input(),
+        __metadata("design:type", Object)
     ], SMVisibilityDirective.prototype, "smDirVisibility", void 0);
     __decorate([
-        Output(), 
-        __metadata('design:type', EventEmitter)
+        Output(),
+        __metadata("design:type", EventEmitter)
     ], SMVisibilityDirective.prototype, "onTopVisible", void 0);
     __decorate([
-        Output(), 
-        __metadata('design:type', EventEmitter)
+        Output(),
+        __metadata("design:type", EventEmitter)
     ], SMVisibilityDirective.prototype, "onTopPassed", void 0);
     __decorate([
-        Output(), 
-        __metadata('design:type', EventEmitter)
+        Output(),
+        __metadata("design:type", EventEmitter)
     ], SMVisibilityDirective.prototype, "onUpdate", void 0);
     SMVisibilityDirective = __decorate([
         Directive({
-            selector: "[smDirVisibility]"
-        }), 
-        __metadata('design:paramtypes', [ViewContainerRef])
+            selector: '[smDirVisibility]'
+        }),
+        __metadata("design:paramtypes", [ViewContainerRef])
     ], SMVisibilityDirective);
     return SMVisibilityDirective;
 }());
-export var SMDeviceVisibilityDirective = (function () {
+export { SMVisibilityDirective };
+var SMDeviceVisibilityDirective = (function () {
     function SMDeviceVisibilityDirective(element) {
         this.element = element;
     }
     SMDeviceVisibilityDirective.prototype.ngOnInit = function () {
-        (_a = this.element.element.nativeElement.classList).add.apply(_a, this.smDeviceVisibility.split(" "));
         var _a;
+        (_a = this.element.element.nativeElement.classList).add.apply(_a, this.smDeviceVisibility.split(' '));
     };
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        Input(),
+        __metadata("design:type", String)
     ], SMDeviceVisibilityDirective.prototype, "smDeviceVisibility", void 0);
     SMDeviceVisibilityDirective = __decorate([
         Directive({
-            selector: "[smDeviceVisibility]"
-        }), 
-        __metadata('design:paramtypes', [ViewContainerRef])
+            selector: '[smDeviceVisibility]'
+        }),
+        __metadata("design:paramtypes", [ViewContainerRef])
     ], SMDeviceVisibilityDirective);
     return SMDeviceVisibilityDirective;
 }());
+export { SMDeviceVisibilityDirective };

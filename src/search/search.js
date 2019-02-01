@@ -7,11 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import "rxjs/add/operator/debounceTime";
-import "rxjs/add/operator/distinctUntilChanged";
-export var SemanticSearchComponent = (function () {
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+var SemanticSearchComponent = (function () {
     function SemanticSearchComponent() {
         this.debounce = 0;
         this.onSearch = new EventEmitter();
@@ -21,41 +20,40 @@ export var SemanticSearchComponent = (function () {
         var _this = this;
         this.searchControl
             .valueChanges
-            .distinctUntilChanged()
-            .debounceTime(this.debounce)
+            .pipe(distinctUntilChanged(), debounceTime(this.debounce))
             .subscribe(function (data) { return _this.onSearch.emit(data); });
     };
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        Input(),
+        __metadata("design:type", String)
     ], SemanticSearchComponent.prototype, "class", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', Boolean)
+        Input(),
+        __metadata("design:type", Boolean)
     ], SemanticSearchComponent.prototype, "icon", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', Boolean)
+        Input(),
+        __metadata("design:type", Boolean)
     ], SemanticSearchComponent.prototype, "loading", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', Number)
+        Input(),
+        __metadata("design:type", Number)
     ], SemanticSearchComponent.prototype, "debounce", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        Input(),
+        __metadata("design:type", String)
     ], SemanticSearchComponent.prototype, "placeholder", void 0);
     __decorate([
-        Output(), 
-        __metadata('design:type', EventEmitter)
+        Output(),
+        __metadata("design:type", EventEmitter)
     ], SemanticSearchComponent.prototype, "onSearch", void 0);
     SemanticSearchComponent = __decorate([
         Component({
             changeDetection: ChangeDetectionStrategy.OnPush,
-            selector: "sm-search",
-            template: "<div class=\"ui search\" [ngClass]=\"{'loading': loading}\">\n <div class=\"ui icon input {{class}} \">\n  <input class=\"prompt\" [formControl]=\"searchControl\" type=\"text\" [attr.placeholder]=\"placeholder\">\n  <i *ngIf=\"icon\" class=\"search icon\"></i>\n  </div>\n  <div class=\"results\"></div>\n</div>"
-        }), 
-        __metadata('design:paramtypes', [])
+            selector: 'sm-search',
+            template: "<div class=\"ui search\" [ngClass]=\"{'loading': loading}\">\n      <div class=\"ui icon input {{class}} \">\n          <input class=\"prompt\" [formControl]=\"searchControl\" type=\"text\" [attr.placeholder]=\"placeholder\">\n          <i *ngIf=\"icon\" class=\"search icon\"></i>\n      </div>\n      <div class=\"results\"></div>\n  </div>"
+        })
     ], SemanticSearchComponent);
     return SemanticSearchComponent;
 }());
+export { SemanticSearchComponent };

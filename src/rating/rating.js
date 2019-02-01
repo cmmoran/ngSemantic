@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, Input, ViewChild, ChangeDetectionStrategy, ElementRef, EventEmitter, Output } from "@angular/core";
-export var SemanticRatingComponent = (function () {
+import { Component, Input, ViewChild, ChangeDetectionStrategy, ElementRef, EventEmitter, Output } from '@angular/core';
+var SemanticRatingComponent = (function () {
     function SemanticRatingComponent() {
         this.onRate = new EventEmitter();
     }
@@ -24,32 +24,32 @@ export var SemanticRatingComponent = (function () {
         });
     };
     __decorate([
-        Input(), 
-        __metadata('design:type', String)
+        Input(),
+        __metadata("design:type", String)
     ], SemanticRatingComponent.prototype, "class", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', Number)
+        Input(),
+        __metadata("design:type", Number)
     ], SemanticRatingComponent.prototype, "initialRating", void 0);
     __decorate([
-        Input(), 
-        __metadata('design:type', Number)
+        Input(),
+        __metadata("design:type", Number)
     ], SemanticRatingComponent.prototype, "maxRating", void 0);
     __decorate([
-        Output(), 
-        __metadata('design:type', EventEmitter)
+        Output(),
+        __metadata("design:type", EventEmitter)
     ], SemanticRatingComponent.prototype, "onRate", void 0);
     __decorate([
-        ViewChild("rating"), 
-        __metadata('design:type', ElementRef)
+        ViewChild('rating'),
+        __metadata("design:type", ElementRef)
     ], SemanticRatingComponent.prototype, "rating", void 0);
     SemanticRatingComponent = __decorate([
         Component({
             changeDetection: ChangeDetectionStrategy.OnPush,
-            selector: "sm-rating",
+            selector: 'sm-rating',
             template: "<div class=\"ui {{class}} rating\" #rating></div>"
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], SemanticRatingComponent);
     return SemanticRatingComponent;
 }());
+export { SemanticRatingComponent };
